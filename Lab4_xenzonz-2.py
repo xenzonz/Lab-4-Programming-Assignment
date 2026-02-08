@@ -12,18 +12,32 @@ import random
 
 # user input function
 def user_input_guess():
-    
-    user_input = input("Guess a number (1-15): ").strip()        
-    guess = int(user_input)
-    #print(guess)
+    #asks user to guess a number between 1 to 15
 
-    return guess
+    while True: #while loop to keep asking
+        try: #catch user error
+
+            guess = int(input("Guess a number (1-15): "))
+
+            if 1 <= guess <=15:
+                return guess
+            else:
+                print("out of range")
+                
+        except ValueError: 
+            print("enter a whole number")
+    
+
+
+
+        
     
 #run user_input_guess
 #user_input_guess()
 
 #main logic function
-def main():
+def main(): 
+    #hangman images in a list
     hangman_stages = [r'''
 +-------+
 |       |
@@ -74,6 +88,8 @@ def main():
 |      / \
 |   
 ==========''']
+    
+    #main logic
     #CHANGE TO 1, 15 AFTER TESTING
     secret_number = random.randint(1, 2)
     wrong_guesses = 0
