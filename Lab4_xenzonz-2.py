@@ -17,7 +17,7 @@ def user_input_guess():
     while True: #while loop to keep asking if error
         try: #catch user error
 
-            guess = int(input("Guess a number (1-15): ").strip())
+            guess = int(input("Guess a number (1 to 15): ").strip())
 
             if 1 <= guess <=15:
                 return guess
@@ -95,8 +95,8 @@ def main():
     wrong_guesses = 0
     max_wrong = len(hangman_stages) - 1
 
-    print("Guess a number from 1 to 15. Dont get hanged!")
-    print(f"You can be wrong {max_wrong} times before you get hanged.")
+    print("Guess a number from 1 to 15. Dont let the man get hanged!")
+    print(f"You can be wrong {max_wrong} times before the man gets hanged.")
     print(hangman_stages[wrong_guesses])
 
     #test
@@ -107,7 +107,7 @@ def main():
 
         #win if statement
         if guess == secret_number:
-            print(f"Congrats! The secret number was {secret_number}. You live!!!")
+            print(f"Congrats! The secret number was {secret_number}. The man lives!!!")
             break
         
         #too low or too high number check
@@ -124,7 +124,7 @@ def main():
         
         #lose if statement
         if wrong_guesses == max_wrong:
-            print(f"You lost. The secret number was {secret_number}.")
+            print(f"You lost. The man was hanged. The secret number was {secret_number}.")
             break
 
         
