@@ -15,12 +15,12 @@ def user_input_guess():
     
     user_input = input("Guess a number (1-15): ").strip()        
     guess = int(user_input)
-    print(guess)
+    #print(guess)
 
     return guess
     
 #run user_input_guess
-user_input_guess()
+#user_input_guess()
 
 #main logic function
 def main():
@@ -74,7 +74,7 @@ def main():
 |      / \
 |   
 ==========''']
-
+    #CHANGE TO 1, 15 AFTER TESTING
     secret_number = random.randint(1, 2)
     wrong_guesses = 0
 
