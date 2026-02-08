@@ -91,9 +91,11 @@ def main():
     
     #main logic
     #CHANGE TO 1, 15 AFTER TESTING
-    secret_number = random.randint(1, 2)
+    secret_number = random.randint(1, 3)
     wrong_guesses = 0
     max_wrong = len(hangman_stages) - 1
+
+    print(hangman_stages[wrong_guesses])
 
     #test
     print(f"secret number is {secret_number}")
@@ -101,6 +103,7 @@ def main():
     while True:
         guess = user_input_guess()
 
+        #win if statement
         if guess == secret_number:
             print(f"congrats! secret number was {secret_number}. win!!!")
             break
@@ -110,10 +113,18 @@ def main():
             print("too low!")
         else:
             print("too high!")
-            
+        
+        #add 1 if guessed wrong, print image, and then loop
         wrong_guesses += 1
+        print(hangman_stages[wrong_guesses])
         #test
         print(f"TESTwrong guesses: {wrong_guesses}")
+        
+        #lose if statement
+        if wrong_guesses == max_wrong:
+            print("DEAD")
+            break
+
         
     
 
