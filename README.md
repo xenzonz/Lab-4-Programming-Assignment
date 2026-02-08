@@ -1,1 +1,1 @@
-lab 4 guess the number hang man style 
+lab 4 option 2 guess the number hangman style 
