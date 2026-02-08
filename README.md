@@ -2,10 +2,10 @@ lab 4 guess the number hang man style
 
 """
 __________
-|        |
-|        0
-|      .-l-.
-|       / \
-|
+I        I
+I        0
+I      .-I-.
+I       / \
+I
 =============
 """
