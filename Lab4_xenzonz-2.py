@@ -14,10 +14,10 @@ import random
 def user_input_guess():
     #asks user to guess a number between 1 to 15
 
-    while True: #while loop to keep asking
+    while True: #while loop to keep asking if error
         try: #catch user error
 
-            guess = int(input("Guess a number (1-15): "))
+            guess = int(input("Guess a number (1-15): ").strip())
 
             if 1 <= guess <=15:
                 return guess
@@ -93,6 +93,7 @@ def main():
     #CHANGE TO 1, 15 AFTER TESTING
     secret_number = random.randint(1, 2)
     wrong_guesses = 0
+    max_wrong = len(hangman_stages) - 1
 
     #test
     print(f"secret number is {secret_number}")
@@ -103,6 +104,17 @@ def main():
         if guess == secret_number:
             print(f"congrats! secret number was {secret_number}. win!!!")
             break
+        
+        #too low or too high number check
+        if guess < secret_number:
+            print("too low!")
+        else:
+            print("too high!")
+            
+        wrong_guesses += 1
+        #test
+        print(f"TESTwrong guesses: {wrong_guesses}")
+        
     
 
 #run main function
