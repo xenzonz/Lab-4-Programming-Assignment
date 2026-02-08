@@ -7,14 +7,22 @@ iii. Player tries to guess a random number between 1 to 15. Each incorrect guess
 iv. No starter code
 v. 2/8/2026
 """
-
+print("TEST122")
 import random
 
-user_input = input("Guess a number (1-15): ").strip()
-guess = int(user_input)
-#test
-print(guess)
+# user input function
+def user_input_guess():
+    
+    user_input = input("Guess a number (1-15): ").strip()        
+    guess = int(user_input)
+    print(guess)
 
+    return guess
+    
+#run user_input_guess
+user_input_guess()
+
+#main logic function
 def main():
     hangman_stages = [r'''
 +-------+
@@ -67,10 +75,19 @@ def main():
 |   
 ==========''']
 
-    secret_number = random.randint(1, 15)
+    secret_number = random.randint(1, 2)
     wrong_guesses = 0
+
     #test
     print(f"secret number is {secret_number}")
+
+    while True:
+        guess = user_input_guess()
+
+        if guess == secret_number:
+            print(f"congrats! secret number was {secret_number}. win!!!")
+            break
+    
 
 #run main function
 main()
